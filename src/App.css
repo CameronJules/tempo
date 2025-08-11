@@ -8,7 +8,7 @@
   --success: #2ecc71;      /* Start button */
   --success-press: #27ae60;
   --stop: #cc2e2e;         /* Stop button */
-  --neutral: #6b7177;      /* Reset button */
+  --neutral: #3f3f46;      /* Reset button */
   --neutral-press: #5b6066;
   --radius: 12px;
   --shadow: 0 10px 30px rgba(0,0,0,.35), 0 2px 10px rgba(0,0,0,.25);
@@ -131,7 +131,7 @@ html, body {
   align-content: center;
 
   background: var(--bg);
-  box-shadow: 0 -8px 24px rgba(0,0,0,.25);
+
   z-index: 10;              /* stay above content */
 }
 
@@ -162,7 +162,7 @@ html, body {
 /* Reset (gray) */
 .btn-reset {
   background: var(--neutral);
-  color: #111;
+  color: var(--text);
   box-shadow: 0 6px 16px rgba(0,0,0,.25) inset, 0 6px 16px rgba(0,0,0,.25);
 }
 .btn-reset:hover { filter: brightness(1.05); }
@@ -222,4 +222,8 @@ html, body {
   position: absolute; inset: 0;
   background: linear-gradient(90deg, rgba(255,255,255,.08), transparent 50%);
   pointer-events: none;
+}
+
+.hide-text {
+  color: var(--bg);
 }

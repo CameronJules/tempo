@@ -44,12 +44,25 @@ export function LapStopwatch() {
   };
   // The internal components which need to be displayed get copied to the react use state or ref
 
-  const formatTime = (ms: number): string => {
-    const minutes = Math.floor(ms / 60000);
-    const seconds = Math.floor((ms % 60000) / 1000);
-    const centiseconds = Math.floor((ms % 1000) / 10);
-    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}.${centiseconds.toString().padStart(2, '0')}`;
-  };
+    const formatTime = (milliseconds: number): string => {
+        const totalMs = Math.floor(milliseconds);
+        const totalSeconds = Math.floor(milliseconds / 1000);
+
+        const ms = Math.floor((totalMs % 1000) / 10);
+        const seconds = totalSeconds % 60;
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const hours = Math.floor(totalSeconds / 3600);
+        if (hours == 0) {
+            return `${minutes.toString().padStart(2, "0")}:${seconds
+            .toString()
+            .padStart(2, "0")}.${ms.toString().padStart(2, "0")}`;
+        } else {
+            return `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds
+            .toString()
+            .padStart(2, "0")}.${ms.toString().padStart(2, "0")}`;
+        }
+
+    };
 
   return (
     <div className="app">
