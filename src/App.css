@@ -16,6 +16,7 @@
   --minw: 340px;           /* minimum layout width */
   --minh: 400px;           /* minimum layout height */
   --controls-h: 84px;      /* fixed controls bar height */
+  --app-max: 800px
 }
 
 * { box-sizing: border-box; }
@@ -32,7 +33,7 @@ html, body {
 
 /* ========== Layout ========== */
 .app {
-  max-width: 560px;
+  max-width: var(--app-max);
   margin: 0 auto;
   padding: 24px 22px 28px;
   padding-bottom: calc(var(--controls-h) + 8px); /* avoid overlap with fixed controls */
@@ -67,7 +68,7 @@ html, body {
 
   overflow-y: auto;
   max-height: 50vh;
-  
+
   scrollbar-width: none;       /* Firefox */
   -ms-overflow-style: none;    /* Internet Explorer/Edge */ 
 }
@@ -117,14 +118,21 @@ html, body {
 .controls {
   position: fixed;
   bottom: 0;
-  left: 0;
+  inset-inline: 0;          /* left:0; right:0 in logical terms */
+  margin-inline: auto;      /* center it */
+  max-width: var(--app-max);
   width: 100%;
+
   padding: 16px clamp(16px, 4vw, 36px) calc(16px + env(safe-area-inset-bottom));
   gap: 14px;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   align-content: center;
+
+  background: var(--bg);
+  box-shadow: 0 -8px 24px rgba(0,0,0,.25);
+  z-index: 10;              /* stay above content */
 }
 
 .btn {
@@ -179,4 +187,39 @@ html, body {
   .app { padding: 18px 14px 24px; }
   .time-display { margin-bottom: 18px; }
   .laps thead th, .laps tbody td { padding-left: 12px; padding-right: 12px; }
+}
+
+
+
+/* ==== Time bar component ==== */
+/* Bar container: full width, subtle background, rounded */
+.splitbar {
+  width: 100%;
+  height: 8px;                      /* tweak if you want thicker */
+  background: var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+}
+
+/* Each segment fills height, width set inline (%) */
+.splitbar__seg {
+  height: 100%;
+  transition: width .12s linear;     /* smooth growth as time passes */
+}
+
+/* Colors from your theme */
+.splitbar__seg.is-work  { background: var(--success); }
+.splitbar__seg.is-break { background: var(--stop); }
+
+/* Optional: make the current (growing) segment slightly glossy */
+.splitbar__seg.is-current {
+  filter: brightness(1.05);
+  position: relative;
+}
+.splitbar__seg.is-current::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,.08), transparent 50%);
+  pointer-events: none;
 }

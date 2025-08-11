@@ -1,6 +1,7 @@
 // Example React component usage
 import { useState, useEffect, useRef } from 'react';
 import {LapTimer, Lap} from '../lib/stopwatch'
+import { LapSplitBar } from './time_split_bar';
 
 export function LapStopwatch() {
   const [elapsed, setElapsed] = useState(0);
@@ -54,13 +55,13 @@ export function LapStopwatch() {
     <div className="app">
         <div>
             <h1 className="time-display">{formatTime(elapsed)}</h1>
+            <LapSplitBar timer={timerRef.current}/>
             <p className='status-text'>{lapType}: {formatTime(currentLap)}</p>
         </div>
-
         <div className='laps'>
             <table>
                 <thead>
-                    <tr><th className="num">Lap No.</th><th className="split">Split</th><th className="total">Total</th></tr>
+                    <tr><th className="num">Lap Type</th><th className="split">Split</th><th className="total">Total</th></tr>
                 </thead>
                 <tbody>
                     {[...laps].reverse().map((lap) => (
@@ -73,7 +74,7 @@ export function LapStopwatch() {
                 </tbody>
             </table>
         </div>
-
+        
         <div className='controls'>
             <button className='btn btn-reset' onClick={isRunning ? handleLap : handleReset}>
                 {isRunning ? nextLapType : 'Reset'}
@@ -82,6 +83,7 @@ export function LapStopwatch() {
                 {isRunning ? 'Stop' : 'Start'}
             </button>
         </div>
+        
     </div>
   );
 };

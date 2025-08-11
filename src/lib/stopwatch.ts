@@ -85,10 +85,12 @@ export class LapTimer {
   private laps: Lap[] = [];
   private lastLapTime: number = 0;
   private currentLapType: LapType;
+  private defaultLapType: LapType;
 
   constructor(defaultLapType: LapType = LapType.Work) {
     this.stopwatch = new BaseStopwatch();
     this.currentLapType = defaultLapType;
+    this.defaultLapType = defaultLapType;
   }
 
   // Delegate basic functions
@@ -104,6 +106,7 @@ export class LapTimer {
     this.stopwatch.reset();
     this.laps = [];
     this.lastLapTime = 0;
+    this.currentLapType = this.defaultLapType;
   }
 
   tick(): void {
