@@ -2,8 +2,12 @@
 
 *A minimalist stopwatch that reveals how much time you spend resting — or working.*
 
-## Install
-> coming soon!
+## 🚀 Install
+1) Clone the git repo `git clone https://github.com/CameronJules/tempo.git`
+2) Install [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) then pmpm if not done already `npm install -g pnpm`
+3) cd into the tempo directory `cd tempo`
+4) Run `pnpm run tauri dev`
+> App store and web download coming soon!
 
 ## 📖 About
 
