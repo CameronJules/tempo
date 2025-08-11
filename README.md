@@ -1,40 +1,66 @@
 # Tempo
 
-The stopwatch that exposes how much you are resting (or working).
+*A minimalist stopwatch that reveals how much time you spend resting — or working.*
 
-I was using 2 different stopwatch apps to track how much I am working each day. Doing this created friction and I wanted a better solution, in a style I liked.
-<br><br>
-This also gave me the chance to work with some tools that i find interesting (tauri and rust). This project is a learning experience for me and a lot of the comments are for my own reference if i need a refresher later down the line, so hopefully if you are curious they can help you too.
+## Install
+> coming soon!
 
-<img width="686" height="621" alt="image" src="https://github.com/user-attachments/assets/ee3f14ef-ec11-4812-a2ca-fdb02d02a600" />
+## 📖 About
+
+I used to juggle **two separate stopwatch apps** every day to track my work hours.  
+It worked… but it also created friction.
+
+**Tempo** was born from the need for a smoother workflow — in a style I liked — while giving me a chance to explore tools I find exciting: **[Tauri](https://tauri.app/)** and **Rust**.
+
+> 💡 This is also a learning project. Many comments in the code are for my own reference, but if you’re curious, they might help you too.
+
+<div align="center">
+  <img width="686" height="621" alt="Tempo screenshot" src="https://github.com/user-attachments/assets/ee3f14ef-ec11-4812-a2ca-fdb02d02a600" />
+</div>
 
 
-## Recommended IDE Setup
+## ✨ Features
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+### 1. Basic Stopwatch
+A straightforward stopwatch for tracking elapsed time.
 
-## Features
+---
 
-### 1: Basic Stopwatch
+### 2. Tempo Bar  
+A visual representation of your time usage throughout the day.  
+The **Tempo Bar** displays the total elapsed time, split between **work (green)** and **rest (red)**.  
+It updates dynamically as your day progresses, letting you instantly see how your time has been spent.
 
-### 2: Tempo Bar
-To provide a strong visual representation of how your time is being used the tempo bar shows how you have used your time so far. It represents the full elapse time of the stopwatch. Work and rest splits will be displayed in green and red respectively. This bar dynamically updates as you progress through the day so that when your day is done you know very quickly how you have spent your time.
+<div align="center">
+  <img width="505" height="418" alt="Tempo bar work view" src="https://github.com/user-attachments/assets/96e1c0ed-093c-4c3d-b25e-89ae8302fb09" />
+  <img width="506" height="418" alt="Tempo bar rest view" src="https://github.com/user-attachments/assets/4714f7cd-163d-4a50-831e-370596d93fb7" />
+</div>
 
-<img width="505" height="418" alt="image" src="https://github.com/user-attachments/assets/96e1c0ed-093c-4c3d-b25e-89ae8302fb09" /><img width="506" height="418" alt="image" src="https://github.com/user-attachments/assets/4714f7cd-163d-4a50-831e-370596d93fb7" />
+---
 
-### 3: Work / Break splits
-Instead of numbered laps, the stopwatch splits time up between work and rest. This gives a very clear and simple display to show how much time is spent on each split.
+### 3. Work / Break Splits  
+Instead of numbered laps, **Tempo** automatically splits your time between work and rest, giving you a clear, simple breakdown.
 
-<img width="601" height="161" alt="image" src="https://github.com/user-attachments/assets/4211ca0b-5733-4924-8871-98eaadb5fee3" />
+<div align="center">
+  <img width="601" height="161" alt="Work/Break splits" src="https://github.com/user-attachments/assets/4211ca0b-5733-4924-8871-98eaadb5fee3" />
+</div>
 
-## What's Next?
-- Light / Dark device mode matching.
-- Save timers for retrospective reviews.
-- Display previous timers on calendar, showing days missed.
-- Add notes to laps.
-- Analytics, show patterns in working and changes over time.
-- Daily summary, sumarise activity for the day and any important notes to review.
-- AI summary and suggestions for improvement.
-- Integrate daily todos, showing when they are completed on the time bar
 
+
+## 🚀 What's Next?
+
+- 🌗 Light/Dark mode matching with system theme  
+- 💾 Save timers for retrospective reviews  
+- 📅 Calendar view of previous timers, highlighting missed days  
+- 📝 Add notes to laps  
+- 📊 Analytics to reveal work/rest patterns over time  
+- 📋 Daily summaries with key notes for review  
+- 🤖 AI-generated summaries and suggestions for improvement  
+- ✅ Integration with daily to-dos, showing completion times on the Tempo Bar  
+
+## 🛠 Recommended IDE Setup
+
+- [VS Code](https://code.visualstudio.com/)  
+- [Tauri VS Code Extension](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode)  
+- [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
 
