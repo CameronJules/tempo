@@ -51,30 +51,36 @@ export function LapStopwatch() {
   };
 
   return (
-    <div>
+    <div className="app">
         <div>
-            <h1>{formatTime(elapsed)}</h1>
-            <p>{lapType}: {formatTime(currentLap)}</p>
-        </div>
-        <div>
-            <button onClick={isRunning ? handleStop : handleStart}>
-            {isRunning ? 'Stop' : 'Start'}
-            </button>
-            <button onClick={handleReset}>Reset</button>
-        </div>
-        <div>
-            <button onClick={handleLap} disabled={!isRunning}>
-            {nextLapType}
-            </button>
+            <h1 className="time-display">{formatTime(elapsed)}</h1>
+            <p className='status-text'>{lapType}: {formatTime(currentLap)}</p>
         </div>
 
-        <div>
-            <h3>Work splits</h3>
-            {laps.map((lap) => (
-            <div key={lap.lapNumber}>
-                {lap.type}: {formatTime(lap.lapTime)}
-            </div>
-            ))}
+        <div className='laps'>
+            <table>
+                <thead>
+                    <tr><th className="num">Lap No.</th><th className="split">Split</th><th className="total">Total</th></tr>
+                </thead>
+                <tbody>
+                    {laps.map((lap) => (
+                    <tr key={lap.lapNumber}>
+                        <td className='num'>{lap.type}</td>
+                        <td className='split'>{formatTime(lap.lapTime)}</td>
+                        <td className='total'>{formatTime(lap.totalTime)}</td>
+                    </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+
+        <div className='controls'>
+            <button className='btn btn-reset' onClick={isRunning ? handleLap : handleReset}>
+                {isRunning ? nextLapType : 'Reset'}
+            </button>
+            <button className={isRunning ? 'btn btn-stop' : 'btn btn-start'} onClick={isRunning ? handleStop : handleStart}>
+                {isRunning ? 'Stop' : 'Start'}
+            </button>
         </div>
     </div>
   );

@@ -34,8 +34,8 @@ export interface Lap {
 };
 
 export enum LapType {
-    Work = "work",
-    Break = "break"
+    Work = "Work",
+    Break = "Break"
 }
 
 /// Base Stopwatch class (assuming this is your existing implementation)
