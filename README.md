@@ -6,6 +6,9 @@ I was using 2 different stopwatch apps to track how much I am working each day. 
 <br><br>
 This also gave me the chance to work with some tools that i find interesting (tauri and rust). This project is a learning experience for me and a lot of the comments are for my own reference if i need a refresher later down the line, so hopefully if you are curious they can help you too.
 
+<img width="686" height="621" alt="image" src="https://github.com/user-attachments/assets/ee3f14ef-ec11-4812-a2ca-fdb02d02a600" />
+
+
 ## Recommended IDE Setup
 
 - [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
@@ -25,6 +28,7 @@ Instead of numbered laps, the stopwatch splits time up between work and rest. Th
 <img width="601" height="161" alt="image" src="https://github.com/user-attachments/assets/4211ca0b-5733-4924-8871-98eaadb5fee3" />
 
 ## What's Next?
+- Light / Dark device mode matching.
 - Save timers for retrospective reviews.
 - Display previous timers on calendar, showing days missed.
 - Add notes to laps.
