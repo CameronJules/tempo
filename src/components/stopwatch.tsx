@@ -63,7 +63,7 @@ export function LapStopwatch() {
                     <tr><th className="num">Lap No.</th><th className="split">Split</th><th className="total">Total</th></tr>
                 </thead>
                 <tbody>
-                    {laps.map((lap) => (
+                    {[...laps].reverse().map((lap) => (
                     <tr key={lap.lapNumber}>
                         <td className='num'>{lap.type}</td>
                         <td className='split'>{formatTime(lap.lapTime)}</td>

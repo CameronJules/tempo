@@ -15,7 +15,9 @@
         "titleBarStyle": "Overlay", 
         "decorations": true,
         "width": 800,
-        "height": 600
+        "height": 600,
+        "minWidth": 500,
+        "minHeight": 400
       }
     ],
     "security": {
